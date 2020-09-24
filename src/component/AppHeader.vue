@@ -1,25 +1,42 @@
 <template>
     <div class="ui secondary pointing menu">
-        <a class="active item">
+        <router-link to="/" class="active item">
             Image Storage
-        </a>
+        </router-link>
   <div class="right menu">
-    <a href="#" class="ui item" @click="login">
-      Login
-    </a>
+    
+    <div v-if="isLoggedIn" class="horizontal">
+      <router-link to="/" class="ui item"  >
+        Gallery
+      </router-link>
+      <router-link to="/upload" class="ui item">
+        Upload
+      </router-link>
+      <a href="#" class="ui item" @click="logout">
+        Logout
+      </a>
+      </div>
+      <a  v-else href="#" class="ui item" @click="login">
+        Login
+      </a>
   </div>
+
 </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name:"AppHeader",
-  methods: mapActions(["login"])
+  methods: mapActions(["login", "logout"]),
+  computed: mapGetters(["isLoggedIn"]),
 }
 </script>
 
 <style scoped>
-
+  .horizontal {
+    display: flex;
+    flex-direction: row;
+  }
 </style>

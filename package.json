@@ -13,7 +13,7 @@
     "lodash": "^4.17.20",
     "qs": "^6.9.4",
     "vue": "^3.0.0-beta.1",
-    "vue-router": "^3.4.3",
+    "vue-router": "^4.0.0-beta.11",
     "vuex": "^4.0.0-beta.4"
   },
   "devDependencies": {
